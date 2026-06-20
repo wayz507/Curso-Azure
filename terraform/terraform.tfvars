@@ -8,8 +8,8 @@ tags = {
 }
 
 ##### Variables - Resource Group RAC #####
-resource_group_name = ""
-location            = ""
+resource_group_name = "rg-utpdavid2026-user8-cc"
+location            = "eastus2"
 
 ##### Variables - Storage Account RAC #####
 storage_account_name  = ""
