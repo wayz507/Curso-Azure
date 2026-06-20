@@ -1,0 +1,19 @@
+name: 'Infrastructure Destroy'
+
+on:
+  workflow_dispatch:
+
+run-name: Destroying branch ${{ github.ref_name }}
+permissions:
+  id-token: write
+  contents: read
+  actions: write
+
+jobs:
+
+  terraform-destroy: 
+    uses: ./.github/workflows/plan_and_destroy.yml
+    with:
+      directory: ./terraform
+      environment: ${{ github.ref_name == 'main' && 'prod' || github.ref_name }}
+    secrets: inherit
